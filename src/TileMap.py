@@ -13,13 +13,19 @@ class TileMap:
 
         self.tile_list.append("path")
         self.tile_list.append("mud")
-       
-        self.height = 25
-        self.width = 30
+    
     
     def render(self, screen):
         
-        tilename = self.tile_list[0]
+        tilename = self.tile_list[1]
         tile = self.tileset.get_tile(tilename)
         screen.blit(self.tileset.image, (0,0), tile.rect)
+        screen.blit(self.tileset.image, (32,32), tile.rect)
+        screen.blit(self.tileset.image, (150,150), tile.rect)
+        
+    def loadMap(self, file):
+        tile_field = [50][50]
+        text_file = open('')
+
+        return tile_field
         
