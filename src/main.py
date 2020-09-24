@@ -10,7 +10,7 @@ def main():
 
     frames = pygame.time.Clock()
 
-    map = TileMap()
+    map = TileMap("Utils/Text/MapV1.txt")
 
     running = True
     while running:
