@@ -1,0 +1,2 @@
+class InfoUI:
+    pass
