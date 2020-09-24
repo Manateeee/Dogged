@@ -4,6 +4,8 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((1200,800))
 
+    pygame.display.set_caption("dogged")
+
     frames = pygame.time.Clock()
 
     running = True
