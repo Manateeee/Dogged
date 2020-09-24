@@ -11,7 +11,6 @@ def main():
     frames = pygame.time.Clock()
 
     map = TileMap()
-    myimage = pygame.image.load("Pygame-Tutorial_Tileset.jpg")
 
     running = True
     while running:
@@ -30,13 +29,9 @@ def main():
            
         screen.fill((0,0,0))
         map.render(screen)
-             
-        #(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯
         
 
         pygame.display.flip()
-
-
 
 
 if __name__ == '__main__':

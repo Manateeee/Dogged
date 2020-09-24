@@ -5,7 +5,7 @@ import random
 
 class TileMap:
     def __init__(self):
-        self.tileset = TileSet("TileMap.png", (255, 0, 255), 32, 32)
+        self.tileset = TileSet("Utils\Pictures\TileMap.png", (255, 0, 255), 32, 32)
         self.tileset.add_tile("path", 0, 0)
         self.tileset.add_tile("mud", 32, 0)
 
