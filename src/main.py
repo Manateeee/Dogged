@@ -1,5 +1,7 @@
 import pygame
 
+from TileMap import TileMap
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode((1200,800))
@@ -7,6 +9,9 @@ def main():
     pygame.display.set_caption("dogged")
 
     frames = pygame.time.Clock()
+
+    map = TileMap()
+    myimage = pygame.image.load("Pygame-Tutorial_Tileset.jpg")
 
     running = True
     while running:
@@ -23,8 +28,13 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     pygame.event.post(pygame.event.Event(pygame.QUIT))
            
-        #(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯
         screen.fill((0,0,0))
+        map.render(screen)
+             
+        #(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯(╬▔皿▔)╯
+        
+
+        pygame.display.flip()
 
 
 
