@@ -1,5 +1,4 @@
 import pygame
-
 from TileMap import TileMap
 
 def main():
@@ -11,7 +10,7 @@ def main():
     frames = pygame.time.Clock()
 
     map = TileMap("Utils/Text/MapV1.txt")
-    map.loadMap("Utils/Text/MapV1.txt")
+    
 
     running = True
     while running:
