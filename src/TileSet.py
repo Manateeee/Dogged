@@ -1,5 +1,4 @@
 from TileType import TileType
-import pygame
 import Utils
 
 class TileSet:

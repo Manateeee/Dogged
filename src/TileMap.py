@@ -1,7 +1,5 @@
-import pygame
 from pygame import rect
 from TileSet import TileSet
-import random
 import numpy as np
 
 class TileMap:
@@ -11,26 +9,33 @@ class TileMap:
         self.tileset.add_tile("mud", 32, 0)
 
         self.map_file = map_file
-        self.tile_list = list()
-
+        
+        #höhe breite der tiles
+        self.height = 50
         self.width = 50
-        self.heigth = 50
 
+        #Map größe sollte teilbar mit heigth, width sein
+        self.map_height = 250
+        self.map_width = 250
+
+        #Tileslist namen laden
+        self.tile_list = list()
         self.tile_list.append("path")
         self.tile_list.append("mud")
     
     
     def render(self, screen):
-        test = self.loadMap(self.map_file)
-
-        #tilename = self.tile_list[1]
+        #lade map namen in 2D array 
+        map = self.loadMap(self.map_file)
         
-        
-        for x in range(0, 250, self.width):
-            for y in range(0, 250, self.heigth):
-                tile = self.tileset.get_tile(test[int(x/50)][int(y/50)])
+        #Felder besetzen 
+        for x in range(0, self.map_height, self.width):
+            for y in range(0, self.map_width, self.height):
+                tile = self.tileset.get_tile(map[int(x/50)][int(y/50)])
                 screen.blit(self.tileset.image, (x,y), tile.rect)
+
         """
+        #Tests
         screen.blit(self.tileset.image, (0,0), tile.rect)
         screen.blit(self.tileset.image, (32,32), tile.rect)
         screen.blit(self.tileset.image, (150,150), tile.rect)
@@ -39,6 +44,7 @@ class TileMap:
     
     #load map from txt file
     def loadMap(self, file):
+        #import to create 2D Array 5*5
         tile_field = np.empty((5,5), dtype=object)
         counter = 0
         counter2 = 0
