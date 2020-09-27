@@ -8,9 +8,11 @@ class TileSet:
         self.tile_height = tile_height
         self.tile_types = dict()
 
+    #TileType in dictionary with name as key
     def add_tile(self, name, start_x, start_y):
         self.tile_types[name] = TileType(name, start_x, start_y, self.tile_width, self.tile_height)
 
+    #get by TileType by name 
     def get_tile(self, name):
         try:
             return self.tile_types[name]
