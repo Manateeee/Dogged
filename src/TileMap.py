@@ -31,7 +31,7 @@ class TileMap:
         #Felder besetzen 
         for x in range(0, self.map_height, self.width):
             for y in range(0, self.map_width, self.height):
-                tile = self.tileset.get_tile(map[int(x/50)][int(y/50)])
+                tile = self.tileset.get_tile(map[int(x/self.height)][int(y/self.width)])
                 screen.blit(self.tileset.image, (x,y), tile.rect)
 
         """

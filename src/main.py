@@ -1,16 +1,20 @@
 import pygame
 from TileMap import TileMap
+from Towers import Towers
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((1200,800))
+    screen = pygame.display.set_mode((1600,900))
 
     pygame.display.set_caption("dogged")
 
     frames = pygame.time.Clock()
 
-    map = TileMap("Utils/Text/MapV1.txt")
     
+    map = TileMap("Utils/Text/MapV1.txt")
+    towers = Towers()
+    towers.new_tower("Tower1", 100, 100)
+    towers.new_tower("Tower2", 150,150)
 
     running = True
     while running:
@@ -29,6 +33,7 @@ def main():
            
         screen.fill((0,0,0))
         map.render(screen)
+        towers.render(screen)
         
 
         pygame.display.flip()
