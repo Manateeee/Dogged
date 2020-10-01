@@ -5,8 +5,8 @@ import numpy as np
 class TileMap:
     def __init__(self, map_file):
         self.tileset = TileSet("Utils\Pictures\TileMap.png", (255, 0, 255), 50, 50)
-        self.tileset.add_tile("path", 0, 0)
-        self.tileset.add_tile("mud", 50, 0)
+        self.tileset.add_tile("1", 0, 0)
+        self.tileset.add_tile("2", 50, 0)
 
         self.map_file = map_file
         
@@ -15,13 +15,13 @@ class TileMap:
         self.width = 50
 
         #Map größe sollte teilbar mit heigth, width sein
-        self.map_height = 250
-        self.map_width = 250
+        self.map_height = 1000
+        self.map_width = 1000
 
         #Tileslist namen laden
         self.tile_list = list()
-        self.tile_list.append("path")
-        self.tile_list.append("mud")
+        self.tile_list.append("1")
+        self.tile_list.append("2")
     
     
     def render(self, screen):
@@ -31,7 +31,7 @@ class TileMap:
         #Felder besetzen 
         for x in range(0, self.map_height, self.width):
             for y in range(0, self.map_width, self.height):
-                tile = self.tileset.get_tile(map[int(x/self.height)][int(y/self.width)])
+                tile = self.tileset.get_tile(map[int(y/self.height)][int(x/self.width)])
                 screen.blit(self.tileset.image, (x,y), tile.rect)
 
         """
@@ -44,20 +44,17 @@ class TileMap:
     
     #load map from txt file
     def loadMap(self, file):
-        #import to create 2D Array 5*5
-        tile_field = np.empty((5,5), dtype=object)
-        counter = 0
-        counter2 = 0
+        tile_field = list()
+
         #open map txt file
         text_file = open(file, 'r')
 
         #fill tile_field array with text file values
         for rows in text_file:
-            if(counter >= 5):
-                counter=0
-                counter2+=1
-            tile_field[counter][counter2] = rows.replace("\n", "")
-            counter+=1
+            row = rows.replace("\n", "")
+            row = list(row)
+            tile_field.append(row)
+                
         
         text_file.close()
 
