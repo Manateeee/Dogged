@@ -1,6 +1,7 @@
 import pygame
 from TileMap import TileMap
 from Towers import Towers
+from Enemies import Enemies
 
 def main():
     pygame.init()
@@ -10,7 +11,7 @@ def main():
 
     frames = pygame.time.Clock()
 
-    
+    enemies = Enemies()
     map = TileMap("Utils/Text/MapV1.txt")
     towers = Towers()
     towers.new_tower("Tower1", 100, 100)
@@ -34,7 +35,7 @@ def main():
         screen.fill((0,0,0))
         map.render(screen)
         towers.render(screen)
-        
+        enemies.render(screen)
 
         pygame.display.flip()
 
