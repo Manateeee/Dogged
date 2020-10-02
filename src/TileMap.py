@@ -15,7 +15,7 @@ class TileMap:
         self.width = 50
 
         #Map größe sollte teilbar mit heigth, width sein
-        self.map_height = 1000
+        self.map_height = 900
         self.map_width = 1000
 
         #Tileslist namen laden
@@ -29,8 +29,8 @@ class TileMap:
         map = self.loadMap(self.map_file)
         
         #Felder besetzen 
-        for x in range(0, self.map_height, self.width):
-            for y in range(0, self.map_width, self.height):
+        for x in range(0, self.map_width, self.width):
+            for y in range(0, self.map_height, self.height):
                 tile = self.tileset.get_tile(map[int(y/self.height)][int(x/self.width)])
                 screen.blit(self.tileset.image, (x,y), tile.rect)
 
