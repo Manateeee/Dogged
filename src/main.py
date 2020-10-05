@@ -1,6 +1,7 @@
 import pygame
 from TileMap import TileMap
 from Towers import Towers
+from Enemies import Enemies
 
 def main():
     pygame.init()
@@ -10,7 +11,7 @@ def main():
 
     frames = pygame.time.Clock()
 
-    
+    enemies = Enemies()
     map = TileMap("Utils/Text/MapV1.txt")
     towers = Towers()
     towers.new_tower("Tower1", 100, 100)
@@ -19,7 +20,7 @@ def main():
     running = True
     while running:
         frames.tick(60)
-
+        
         for event in pygame.event.get():
             # Spiel beenden, wenn wir ein QUIT-Event finden.
             if event.type == pygame.QUIT:
@@ -31,10 +32,11 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     pygame.event.post(pygame.event.Event(pygame.QUIT))
            
+
         screen.fill((0,0,0))
         map.render(screen)
         towers.render(screen)
-        
+        #enemies.render(screen)
 
         pygame.display.flip()
 
