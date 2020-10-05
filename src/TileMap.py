@@ -4,7 +4,7 @@ import numpy as np
 
 class TileMap:
     def __init__(self, map_file):
-        self.tileset = TileSet("Utils\Pictures\TileMap.png", (255, 0, 255), 50, 50)
+        self.tileset = TileSet("Utils/Pictures/TileMap.png", (255, 0, 255), 50, 50)
         self.tileset.add_tile("path", 0, 0)
         self.tileset.add_tile("mud", 50, 0)
 

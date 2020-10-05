@@ -4,7 +4,7 @@ from EnemyType import EnemyType
 class Enemies:
     
     def __init__(self):
-        self.Enemy = EnemyType("Utils\Pictures\Peepo.png",(255,0,255),50,50)
+        self.Enemy = EnemyType("Utils/Pictures/Peepo.png",(255,0,255),50,50)
         self.Enemy.add_Enemy("Peepo",0 , 5 , 100 , 0, 0)
 
         #List of the EnemyTypes

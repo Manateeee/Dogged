@@ -2,7 +2,7 @@ from Tower import Tower
 
 class Towers:
     def __init__(self):
-        self.tower = Tower("Utils\Pictures\Towers.png", (255, 0, 255), 50 , 50)
+        self.tower = Tower("Utils/Pictures/Towers.png", (255, 0, 255), 50 , 50)
         self.tower.add_tower("Tower1", 20, 200, 6, 1, 200, 0, 0, "null")
         self.tower.add_tower("Tower2", 30, 500, 2, 10, 300, 50, 0, "null")
 
