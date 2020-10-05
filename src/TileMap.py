@@ -4,9 +4,9 @@ import numpy as np
 
 class TileMap:
     def __init__(self, map_file):
-        self.tileset = TileSet("Utils\Pictures\TileMap.png", (255, 0, 255), 32, 32)
+        self.tileset = TileSet("Utils/Pictures/TileMap.png", (255, 0, 255), 50, 50)
         self.tileset.add_tile("path", 0, 0)
-        self.tileset.add_tile("mud", 32, 0)
+        self.tileset.add_tile("mud", 50, 0)
 
         self.map_file = map_file
         
@@ -31,7 +31,7 @@ class TileMap:
         #Felder besetzen 
         for x in range(0, self.map_height, self.width):
             for y in range(0, self.map_width, self.height):
-                tile = self.tileset.get_tile(map[int(x/50)][int(y/50)])
+                tile = self.tileset.get_tile(map[int(x/self.height)][int(y/self.width)])
                 screen.blit(self.tileset.image, (x,y), tile.rect)
 
         """
