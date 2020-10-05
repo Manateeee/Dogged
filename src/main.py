@@ -16,6 +16,7 @@ def main():
     towers = Towers()
     towers.new_tower("Tower1", 100, 100)
     towers.new_tower("Tower2", 150,150)
+    
 
     running = True
     while running:
