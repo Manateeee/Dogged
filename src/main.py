@@ -2,6 +2,7 @@ import pygame
 from TileMap import TileMap
 from Towers import Towers
 from Enemies import Enemies
+from UI import UI
 
 def main():
     pygame.init()
@@ -21,7 +22,6 @@ def main():
     running = True
     while running:
         frames.tick(60)
-
         for event in pygame.event.get():
             # Spiel beenden, wenn wir ein QUIT-Event finden.
             if event.type == pygame.QUIT:
