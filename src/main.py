@@ -2,6 +2,7 @@ import pygame
 from TileMap import TileMap
 from Towers import Towers
 from Enemies import Enemies
+from StatsUI import StatsUI
 
 def main():
     pygame.init()
@@ -16,11 +17,11 @@ def main():
     towers = Towers()
     towers.new_tower("Tower1", 100, 100)
     towers.new_tower("Tower2", 150,150)
+    s = StatsUI(2,10,100,1)
 
     running = True
     while running:
         frames.tick(60)
-        
         for event in pygame.event.get():
             # Spiel beenden, wenn wir ein QUIT-Event finden.
             if event.type == pygame.QUIT:
@@ -34,9 +35,11 @@ def main():
            
 
         screen.fill((0,0,0))
+        
         map.render(screen)
         towers.render(screen)
-        #enemies.render(screen)
+        enemies.render(screen)
+        s.DrawStats(screen)
 
         pygame.display.flip()
 
