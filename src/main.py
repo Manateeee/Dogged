@@ -2,7 +2,7 @@ import pygame
 from TileMap import TileMap
 from Towers import Towers
 from Enemies import Enemies
-from UI import UI
+from StatsUI import StatsUI
 
 def main():
     pygame.init()
@@ -17,7 +17,7 @@ def main():
     towers = Towers()
     towers.new_tower("Tower1", 100, 100)
     towers.new_tower("Tower2", 150,150)
-    
+    s = StatsUI(2,10,100,1)
 
     running = True
     while running:
@@ -34,6 +34,7 @@ def main():
                     pygame.event.post(pygame.event.Event(pygame.QUIT))
            
         screen.fill((0,0,0))
+        s.DrawStats(screen)
         map.render(screen)
         towers.render(screen)
         enemies.render(screen)
