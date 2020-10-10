@@ -1,14 +1,16 @@
 import pygame
 
 class StatsUI:
-    def __init__(self, curLife , maxLife, geld, wave):
+    def __init__(self, curLife , maxLife, geld, wave, uiHeight):
         self.curLife = curLife
         self.maxLife = maxLife
         self.geld = geld
         self. wave = wave
+        self.uiHeight = uiHeight
 
     def DrawStats(self, screen):
-        rec = pygame.Rect(0,750,1200,50) # x,y,width,height
+        
+        rec = pygame.Rect(0,screen.height - self.uiHeight, screen.width,self.uiHeight) # x,y,width,height
   
         color = (30,30,30) # R,G,B
         pygame.draw.rect(screen,color,rec)
