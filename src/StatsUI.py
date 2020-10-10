@@ -5,7 +5,7 @@ class StatsUI:
         self.curLife = curLife
         self.maxLife = maxLife
         self.geld = geld
-        self. wave = wave
+        self. wave = wav
 
     def DrawStats(self, screen):
         rec = pygame.Rect(0,750,1200,50) # x,y,width,height
